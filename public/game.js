@@ -64,6 +64,7 @@ function audioInit() {
 }
 async function loadSoundFiles() {
   // Real recordings listed in sounds/manifest.json replace the synth placeholders.
+  // A manifest (instead of probing for each file) avoids a 404 per missing sound on every load.
   try {
     const r = await fetch('sounds/manifest.json', { cache: 'no-cache' });
     if (!r.ok) return;
@@ -135,7 +136,8 @@ function buildBg() {
   const pw = cv.width, ph = cv.height;
   // menu: full brightness
   const m = document.createElement('canvas'); m.width = pw; m.height = ph; coverDraw(m.getContext('2d'), img, pw, ph);
-  // play: soft blur (downscale/upscale) + darkening so the fruit pops
+  // play: soft blur (downscale/upscale) + darkening so the fruit pops.
+  // Downscaling instead of ctx.filter = 'blur()' because older Safari ignores ctx.filter.
   const k = bgChoice === 'beach' ? 7 : 4;
   const sm = document.createElement('canvas'); sm.width = Math.max(1, pw / k | 0); sm.height = Math.max(1, ph / k | 0);
   const sc = sm.getContext('2d'); sc.imageSmoothingQuality = 'high'; coverDraw(sc, img, sm.width, sm.height);
@@ -258,6 +260,8 @@ function hitHazard(o, ang) {
   loseLife();
 }
 function loseLife() {
+  // Guard: a hazard hit and a dropped fruit can land in the same frame, and fruit keep falling
+  // during the short delay before game over. Without this, lives went to -1 (seen in play-test).
   if (lives <= 0 || state !== 'play') return;
   lives--; renderLives();
   if (lives <= 0) setTimeout(gameOver, 650);
@@ -295,6 +299,8 @@ function checkSlice(x1, y1, x2, y2) {
     const r = o.size * o.cfg.hr * (o.isHaz ? .95 : 1.0);
     const startInside = (x1 - cx) ** 2 + (y1 - cy) ** 2 < r * r;
     if (!segCircle(x1, y1, x2, y2, cx, cy, r)) { o.wasInside = false; continue; }
+    // A hit counts only when the blade enters the object. One swipe across a tough fruit (coconut,
+    // pineapple) must count once, so the blade has to leave and come back for the next hit.
     if (startInside && o.wasInside) continue;
     o.wasInside = true;
     if (t < o.cool) continue;
