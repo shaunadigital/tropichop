@@ -11,3 +11,10 @@ Swipe-to-chop Hawaiian fruit game. Static site, no build step.
   Names: slice-1, slice-2, slice-3, coconut-thunk, coconut-crack, slippah-slap, wana-hit, swoosh.
 
 Deploy: `vercel deploy --prod` from this folder (vercel.json sets `public` as the output).
+
+## Sounds in use
+
+- `slice-1` to `slice-3`: short splashes from Pixabay (freesound_community, ids 46048, 102492, 80537), trimmed to 0.6 s and leveled. A quiet synth swish plays on top for the knife edge.
+- `coconut-splash`: Pixabay (Universfield, id 229315), trimmed to 1.1 s, layered under the synth coconut crack.
+- Everything else is still the built-in synth. Originals are in `assets/sounds-src/` (not in git).
+- Pixabay Content License: free to use, no credit required.

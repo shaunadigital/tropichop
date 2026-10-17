@@ -95,10 +95,10 @@ function tone(t, type, f0, f1, peak, dec) {
   if (f1) o.frequency.exponentialRampToValueAtTime(f1, t + dec); env(g, t, .005, peak, dec); o.connect(g); g.connect(master); o.start(t); o.stop(t + dec + .05);
 }
 const SFX = {
-  slice() { if (playBuf('slice-' + (1 + (Math.random() * 3 | 0)), .9, .95 + Math.random() * .1) || playBuf('slice-1', .9, .9 + Math.random() * .2)) return;
+  slice() { if (playBuf('slice-' + (1 + (Math.random() * 3 | 0)), .9, .95 + Math.random() * .1)) { noiseHit(AC.currentTime, 'bandpass', 3000, 1.5, .18, .05, 1200); return; }
     const t = AC.currentTime; noiseHit(t, 'bandpass', 2400, 1.2, .5, .09, 900); noiseHit(t + .02, 'lowpass', 700, .7, .35, .14); tone(t, 'sine', 220, 90, .25, .1); },
   thunk() { if (playBuf('coconut-thunk', 1, .95 + Math.random() * .1)) return; const t = AC.currentTime; tone(t, 'sine', 210, 110, .6, .14); tone(t, 'triangle', 420, 300, .15, .06); noiseHit(t, 'bandpass', 1800, 3, .2, .03); },
-  crack() { if (playBuf('coconut-crack', 1)) return; const t = AC.currentTime; noiseHit(t, 'highpass', 1500, .7, .6, .07); tone(t, 'sine', 160, 60, .5, .2); noiseHit(t + .05, 'lowpass', 900, .6, .35, .3, 300); },
+  crack() { playBuf('coconut-splash', .8); if (playBuf('coconut-crack', 1)) return; const t = AC.currentTime; noiseHit(t, 'highpass', 1500, .7, .6, .07); tone(t, 'sine', 160, 60, .5, .2); },
   slap() { if (playBuf('slippah-slap', 1)) return; const t = AC.currentTime; noiseHit(t, 'lowpass', 2600, .8, .9, .07); tone(t, 'sine', 140, 70, .5, .09); },
   wana() { if (playBuf('wana-hit', 1)) return; const t = AC.currentTime; for (let i = 0; i < 7; i++) noiseHit(t + i * .022 + Math.random() * .01, 'bandpass', 2500 + Math.random() * 2500, 4, .4, .03); tone(t, 'square', 220, 110, .08, .2); },
   swoosh() { if (playBuf('swoosh', .5, .9 + Math.random() * .2)) return; const t = AC.currentTime; noiseHit(t, 'bandpass', 600, 2, .12, .16, 2600); },
