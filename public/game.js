@@ -258,6 +258,7 @@ function hitHazard(o, ang) {
   loseLife();
 }
 function loseLife() {
+  if (lives <= 0 || state !== 'play') return;
   lives--; renderLives();
   if (lives <= 0) setTimeout(gameOver, 650);
 }
