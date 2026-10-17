@@ -14,7 +14,16 @@ Deploy: `vercel deploy --prod` from this folder (vercel.json sets `public` as th
 
 ## Sounds in use
 
-- `slice-1` to `slice-3`: short splashes from Pixabay (freesound_community, ids 46048, 102492, 80537), trimmed to 0.6 s and leveled. A quiet synth swish plays on top for the knife edge.
-- `coconut-splash`: Pixabay (Universfield, id 229315), trimmed to 1.1 s, layered under the synth coconut crack.
-- Everything else is still the built-in synth. Originals are in `assets/sounds-src/` (not in git).
-- Pixabay Content License: free to use, no credit required.
+All from Pixabay (Pixabay Content License: free to use, no credit required), trimmed and leveled to about -19 dB. Originals are in `assets/sounds-src/` (not in git).
+
+| Game sound | Source (Pixabay id) | Notes |
+|---|---|---|
+| `slice-1` to `slice-3` | splash 46048, 102492, 80537 | 0.6 s each, picked at random, quiet synth swish on top |
+| `coconut-splash` | Universfield water splash 229315 | 1.1 s, layered under the synth coconut crack |
+| `coconut-thunk` | Dragon Studio fist banging on hollow surface 494315 | first knock only |
+| `slippah-slap` | alex_jauk slap 237622 | |
+| `wana-hit` | plastic crunch 83779 | |
+| `swoosh` | Universfield fast swoosh 383967 | plays on fast swipes |
+
+Backups downloaded but not used: slap 46792, simple whoosh 382724, knock on door 86241, big crunch 90138, water splash 46402.
+Still synth: combo, lucky starfruit, life lost, miss, game over, unlock, menu taps.
