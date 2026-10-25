@@ -493,7 +493,7 @@ function renderMenu() {
   ui.bestMenu.textContent = best ? `Best: ${best}` : '';
   ui.soundBtn.textContent = `Sound: ${soundOn ? 'On' : 'Off'}`;
   ui.bgpick.innerHTML = '';
-  for (const [id, label] of [['koa', 'Wood Board'], ['beach', 'Beach Sunset']]) {
+  for (const [id, label] of [['koa', 'Koa Board'], ['beach', 'Beach Sunset']]) {
     const locked = !unlocked.includes(id);
     const b = document.createElement('button');
     b.className = 'bgopt' + (bgChoice === id ? ' sel' : '') + (locked ? ' locked' : '');
