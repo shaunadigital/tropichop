@@ -1,13 +1,13 @@
 # Project status
 
-Last updated 2026-10-16.
+Last updated 2026-10-25.
 
 ## Live now
 
-Everything below is committed to `main` and deployed to https://games.shauna.digital/tropichop/ (and https://tropichop.vercel.app). Play-test passed on the live site at desktop and phone sizes, no page errors (2026-10-16).
+Everything below is committed to `main` and deployed to https://games.shauna.digital/tropichop/ (and https://tropichop.vercel.app). Play-test passed on the live site at desktop and phone sizes, no page errors (2026-10-16, again 2026-10-25).
 
 - 8 fruits: lilikoi, guava, lychee, mango, dragon fruit, pineapple (2 hits, 2 pts), coconut (3 hits, 3 pts), starfruit (rare, 5 pts, star slices fly out). Each splits along the swipe line and shows its own cross-section, with its own juice, seeds and a fading stain.
-- Hazards: wana (from score 3) and Aunty's slippah (from score 15). A hit costs a life, shakes the screen and shows "Ouch!" or "Smack!". The menu shows the two hazard images instead of naming them.
+- Hazards: wana (from score 3) and Aunty's slippah (from score 15). A hit costs a life, shakes the screen and shows "Ouch!" or "Smack!". The menu says "Watch out for the [slipper image] and the [urchin image]." with the pictures in place of the names.
 - 3 hibiscus lives. A dropped fruit costs one. Game over screen says "Pau!".
 - Combos (3 or more fruit in one swipe), pause, best score, sound on/off.
 - Backgrounds: Koa Board (default) and Beach Sunset (unlocks at 250 points in one round, with a toast). Both are blurred and darkened during play.
