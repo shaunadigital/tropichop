@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <meta name="theme-color" content="#2a1a10">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="description" content="Swipe to chop Hawaiian fruit. Watch out for Aunty's slippah and the wana!">
+<meta name="description" content="Swipe to chop tropical fruit. Watch out for the hazards!">
 <title>TropiChop</title>
 <link rel="icon" href="img/hibiscus.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +52,7 @@ h2{font-family:'Lilita One',sans-serif;font-weight:400;font-size:clamp(40px,11vw
 .btn.ghost{background:rgba(255,255,255,.12);color:var(--ink);box-shadow:none;border:2px solid var(--panel-edge);font-size:18px;padding:10px 22px}
 .how{font-size:15px;line-height:1.45;color:var(--ink-dim);margin-top:10px}
 .how b{color:var(--ink)}
+.how .haz{height:34px;width:auto;vertical-align:middle;margin:0 2px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
 .bgpick{display:flex;gap:12px;justify-content:center;margin-top:12px}
 .bgopt{position:relative;width:118px;border-radius:12px;overflow:hidden;border:3px solid transparent;cursor:pointer;
   background:none;padding:0;color:var(--ink);font:800 13px Nunito,sans-serif}
@@ -92,7 +93,7 @@ h2{font-family:'Lilita One',sans-serif;font-weight:400;font-size:clamp(40px,11vw
     <button class="btn" id="playBtn">Play</button>
     <div class="how"><b>Swipe</b> to chop the fruit. Don't let any drop!<br>
       Coconuts and pineapples take extra chops. Starfruit is lucky.<br>
-      Watch out for <b>Aunty's slippah</b> and the <b>wana</b>.</div>
+      Don't chop these: <img class="haz" src="img/slippah.webp" alt="blue slipper"> <img class="haz" src="img/wana.webp" alt="sea urchin"></div>
     <div class="bgpick" id="bgpick"></div>
     <div class="row" style="margin-top:12px">
       <span class="small" id="bestMenu"></span>
@@ -108,7 +109,7 @@ h2{font-family:'Lilita One',sans-serif;font-weight:400;font-size:clamp(40px,11vw
 </div>
 
 <div class="screen dim" id="over">
-  <h2>Pau!</h2>
+  <h2>Game Over!</h2>
   <div class="card">
     <div class="small">Score</div>
     <div class="big" id="finalScore">0</div>

@@ -7,10 +7,10 @@ Last updated 2026-10-16.
 Everything below is committed to `main` and deployed to https://games.shauna.digital/tropichop/ (and https://tropichop.vercel.app). Play-test passed on the live site at desktop and phone sizes, no page errors (2026-10-16).
 
 - 8 fruits: lilikoi, guava, lychee, mango, dragon fruit, pineapple (2 hits, 2 pts), coconut (3 hits, 3 pts), starfruit (rare, 5 pts, star slices fly out). Each splits along the swipe line and shows its own cross-section, with its own juice, seeds and a fading stain.
-- Hazards: wana (from score 3) and Aunty's slippah (from score 15). A hit costs a life, shakes the screen and shows "Ouch, wana!" or "Ho, Aunty!".
-- 3 hibiscus lives. A dropped fruit costs one. Game over screen says "Pau!".
+- Hazards: wana (from score 3) and Aunty's slippah (from score 15). A hit costs a life, shakes the screen and shows "Ouch!" or "Smack!". The menu shows the two hazard images instead of naming them.
+- 3 hibiscus lives. A dropped fruit costs one. Game over screen says "Game Over!".
 - Combos (3 or more fruit in one swipe), pause, best score, sound on/off.
-- Backgrounds: Koa Board (default) and Beach Sunset (unlocks at 250 points in one round, with a toast). Both are blurred and darkened during play.
+- Backgrounds: Wood Board (default; internal id `koa`) and Beach Sunset (unlocks at 250 points in one round, with a toast). Both are blurred and darkened during play.
 - Sounds: real recordings for slices, coconut thunk and crack splash, slippah slap, wana crunch and fast-swipe swoosh. Synth for combo, lucky, life lost, miss, game over, unlock and taps.
 - Menu has a "More games" link to https://games.shauna.digital/.
 - Card on the games page: logo over the beach sunset, first in the list with the "New" sticker (that change lives in the `shaunagits/games` repo).
@@ -39,6 +39,7 @@ Append new rows. If a row stops being true, mark it superseded rather than delet
 | 2026-10-16 | Deployed through GitHub (repo `shaunagits/tropichop`) connected to Vercel, not through direct Vercel uploads. | The Vercel connector needs file contents passed inline, about 1.6 MB of images; not workable. Shauna's computer had no Vercel login. See `_docs/findings/2026-10-16-deploy-and-sounds.md`. |
 | 2026-10-16 | Sounds come from Pixabay (free, no credit needed), downloaded through Shauna's Chrome. | The cloud workspace and her computer's shell both get 403 from Pixabay. |
 | 2026-10-16 | Slices are three short splashes picked at random, with a quiet synth swish on top. | Repeating one clip sounds robotic; splashes alone lacked a knife edge. |
+| 2026-10-25 | No Hawaiian-derived words in player-facing text. Hazards are shown as images on the menu; hit text is "Ouch!" and "Smack!"; game over says "Game Over!"; background is "Wood Board". | Shauna's call. Internal ids and file names (`wana`, `slippah`, `koa`) stay so saves and assets keep working. |
 
 ## Queue
 

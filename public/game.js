@@ -17,8 +17,8 @@ const FRUITS = {
   starfruit:   { scale: 1.10,hr: .32, oy: 0,   pts: 5, hits: 1, w: 3,  juice: '#ffe066', bits: ['#fff1a8', '#ffd84a'], lucky: true },
 };
 const HAZARDS = {
-  wana:    { scale: .95, hr: .40, oy: 0, minScore: 3,  p: .18, text: 'Ouch, wana!', bits: ['#2a0f3a', '#7a2fb0', '#1a0a22'] },
-  slippah: { scale: 1.15,hr: .26, oy: 0, minScore: 15, p: .12, text: 'Ho, Aunty!',  bits: ['#1e7fd8', '#e9f2ff'] },
+  wana:    { scale: .95, hr: .40, oy: 0, minScore: 3,  p: .18, text: 'Ouch!', bits: ['#2a0f3a', '#7a2fb0', '#1a0a22'] },
+  slippah: { scale: 1.15,hr: .26, oy: 0, minScore: 15, p: .12, text: 'Smack!',      bits: ['#1e7fd8', '#e9f2ff'] },
 };
 
 // ---------- Storage (safe) ----------
@@ -493,7 +493,7 @@ function renderMenu() {
   ui.bestMenu.textContent = best ? `Best: ${best}` : '';
   ui.soundBtn.textContent = `Sound: ${soundOn ? 'On' : 'Off'}`;
   ui.bgpick.innerHTML = '';
-  for (const [id, label] of [['koa', 'Koa Board'], ['beach', 'Beach Sunset']]) {
+  for (const [id, label] of [['koa', 'Wood Board'], ['beach', 'Beach Sunset']]) {
     const locked = !unlocked.includes(id);
     const b = document.createElement('button');
     b.className = 'bgopt' + (bgChoice === id ? ' sel' : '') + (locked ? ' locked' : '');
