@@ -10,7 +10,7 @@ Swipe-to-chop Hawaiian fruit game. Static site, no build step.
   Any sound not listed uses the built-in synth placeholder.
   Names: slice-1, slice-2, slice-3, coconut-thunk, coconut-crack, coconut-splash, slippah-slap, wana-hit, swoosh.
 
-Deploy: push to `main` on GitHub (`shaunagits/tropichop`); Vercel builds production automatically. Live at https://games.shauna.digital/tropichop/.
+Deploy: push to `main` on GitHub (`shaunagits/tropichop`); Vercel builds production automatically. Live at https://shauna.digital/games/tropichop/.
 
 ## Sounds in use
 
